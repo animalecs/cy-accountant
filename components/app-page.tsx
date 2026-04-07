@@ -1,4 +1,5 @@
 import { MobileStickyCta } from "@/components/mobile-sticky-cta";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { SiteFooterCta } from "@/components/site-footer-cta";
 import { SiteHeader } from "@/components/site-header";
 
@@ -287,33 +288,45 @@ export function AppPage({ locale }: AppPageProps) {
       <SiteHeader formId={formId} currentPage="app" inverted />
 
       <section className="bg-[linear-gradient(180deg,#7568f1_0%,#6163df_50%,#231b34_100%)]">
-        <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-10 sm:py-14 md:py-18">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-              The dashboard for your Cyprus company
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/78">
-              A single workspace for invoices, expenses, tax visibility,
-              filings, and accountant support.
-            </p>
-          </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-10 sm:py-14 md:py-18">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+                The dashboard for your Cyprus company
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/78">
+                A single workspace for invoices, expenses, tax visibility,
+                filings, and accountant support.
+              </p>
+            </div>
 
-          <AppDashboardMockup />
-        </div>
+            <AppDashboardMockup />
+          </div>
+        </ScrollReveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-[var(--container-pad)] py-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
-            Invoices, tax visibility, and support without surprises
-          </h2>
-        </div>
+        <ScrollReveal delay={70}>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
+              Invoices, tax visibility, and support without surprises
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-14">
-          <AppCard {...appFeatures[0]} align="left" />
-          <AppCard {...appFeatures[1]} align="right" />
-          <AppCard {...appFeatures[2]} align="left" />
-          <AppCard {...appFeatures[3]} align="right" />
+          <ScrollReveal delay={110}>
+            <AppCard {...appFeatures[0]} align="left" />
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <AppCard {...appFeatures[1]} align="right" />
+          </ScrollReveal>
+          <ScrollReveal delay={210}>
+            <AppCard {...appFeatures[2]} align="left" />
+          </ScrollReveal>
+          <ScrollReveal delay={260}>
+            <AppCard {...appFeatures[3]} align="right" />
+          </ScrollReveal>
         </div>
       </section>
 

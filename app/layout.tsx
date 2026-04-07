@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Cyprus Company Setup and Accounting",
   description:
     "Open or manage your Cyprus company with one portal for invoicing, expenses, tax visibility, and accountant support.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

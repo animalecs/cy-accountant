@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { FAQAccordion } from "@/components/faq-accordion";
 import { MobileStickyCta } from "@/components/mobile-sticky-cta";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { SiteFooterCta } from "@/components/site-footer-cta";
 import { SiteHeader } from "@/components/site-header";
 
@@ -156,137 +157,136 @@ export function LandingPage({ locale }: LandingPageProps) {
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(180deg,transparent,rgba(95,103,247,0.14))]" />
-        <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-8 sm:py-12 md:py-16">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--muted-foreground)]">
-              Powered by{" "}
-              <a
-                href="https://www.gmapgroup.net/"
-                target="_blank"
-                rel="noreferrer"
-                className="relative inline-block px-1 font-semibold text-[var(--foreground)] transition hover:text-[var(--accent-strong)]"
-              >
-                <span className="absolute left-0 right-0 top-0 h-2 rounded-sm bg-[var(--accent-soft)]" />
-                <span className="relative">GMAP Associates</span>
-              </a>
-            </p>
-            <h1 className="mx-auto mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl">
-              Managing a company in Cyprus has never been this simple.
-            </h1>
-            {/* <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--muted-foreground)]">
-              Start a new Cyprus company or bring an existing one into a digital
-              workspace for invoicing, expenses, tax visibility, and accountant
-              support.
-            </p> */}
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row " >
-              <div className=" text-white">
+        <ScrollReveal>
+          <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-8 sm:py-12 md:py-16">
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--muted-foreground)]">
+                Powered by{" "}
                 <a
-                  href={`#${formId}`}
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
+                  href="https://www.gmapgroup.net/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative inline-block px-1 font-semibold text-[var(--foreground)] transition hover:text-[var(--accent-strong)]"
                 >
-                  Book your first call
+                  <span className="absolute left-0 right-0 top-0 h-2 rounded-sm bg-[var(--accent-soft)]" />
+                  <span className="relative">GMAP Associates</span>
+                </a>
+              </p>
+              <h1 className="mx-auto mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl">
+                Managing a company in Cyprus has never been this simple.
+              </h1>
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row ">
+                <div className=" text-white">
+                  <a
+                    href={`#${formId}`}
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
+                  >
+                    Book your first call
+                  </a>
+                </div>
+                <a
+                  href="/en/app"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-medium text-[var(--foreground)]"
+                >
+                  Explore the app
                 </a>
               </div>
-              <a
-                href="/en/app"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-medium text-[var(--foreground)]"
-              >
-                Explore the app
-              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              {heroTags.map((tag, index) => (
+                <span
+                  key={tag}
+                  className={[
+                    "rounded-full px-4 py-2 text-sm font-medium",
+                    index === 0
+                      ? "bg-[#f4bd75] text-[#70410d]"
+                      : index === 1
+                        ? "bg-[#dfe4ff] text-[#4d56bf]"
+                        : "bg-[#e7ddff] text-[#6a52c9]",
+                  ].join(" ")}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-6 max-w-[700px] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/hero-happy-people.jpg"
+                alt="Professional working on a laptop in a bright office setting"
+                width={1000}
+                height={667}
+                className="h-auto max-w-[700px] w-full"
+                priority
+              />
             </div>
           </div>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            {heroTags.map((tag, index) => (
-              <span
-                key={tag}
-                className={[
-                  "rounded-full px-4 py-2 text-sm font-medium",
-                  index === 0
-                    ? "bg-[#f4bd75] text-[#70410d]"
-                    : index === 1
-                      ? "bg-[#dfe4ff] text-[#4d56bf]"
-                      : "bg-[#e7ddff] text-[#6a52c9]",
-                ].join(" ")}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="mx-auto mt-6 max-w-[700px] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] shadow-[var(--shadow-soft)]">
-            <Image
-              src="/hero-happy-people.jpg"
-              alt="Professional working on a laptop in a bright office setting"
-              width={1000}
-              height={667}
-              className="h-auto max-w-[700px] w-full"
-              priority
-            />
-          </div>
-
-
-        </div>
+        </ScrollReveal>
       </section>
 
       <section className="bg-[var(--dark-surface)] text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-[var(--container-pad)] py-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] md:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-white/60">
-              One portal instead of scattered admin
-            </p>
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
-              Opening and managing a company in Cyprus has never been this easy
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-white/72">
-              We bring the relation between you and your accountant online and updated to 2026.
-            </p>
+        <ScrollReveal delay={60}>
+          <div className="mx-auto grid max-w-6xl gap-8 px-[var(--container-pad)] py-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] md:items-center">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-white/60">
+                One portal instead of scattered admin
+              </p>
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
+                Opening and managing a company in Cyprus has never been this easy
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-7 text-white/72">
+                We bring the relation between you and your accountant online and updated to 2026.
+              </p>
+            </div>
+            <VideoPreviewCard />
           </div>
-          <VideoPreviewCard />
-        </div>
+        </ScrollReveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-[var(--container-pad)] py-12 md:py-16">
-        <div className="grid gap-6 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-center md:p-8">
-          <div className="max-w-xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">
-              Dashboard
-            </p>
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
-              See how the dashboard helps you manage taxes and invoices
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-              The dashboard, invoice flows, tax forecast, and support experience
-              now live on a separate product page.
-            </p>
-            <div className="text-white">
-              <a
-                href="/en/app"
-                className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
-              >
-                Check the dashboard
-              </a>
+        <ScrollReveal delay={120}>
+          <div className="grid gap-6 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-center md:p-8">
+            <div className="max-w-xl">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">
+                Dashboard
+              </p>
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+                See how the dashboard helps you manage taxes and invoices
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
+                The dashboard, invoice flows, tax forecast, and support experience
+                now live on a separate product page.
+              </p>
+              <div className="text-white">
+                <a
+                  href="/en/app"
+                  className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
+                >
+                  Check the dashboard
+                </a>
+              </div>
+            </div>
+            <DashboardOverviewCard />
+          </div>
+        </ScrollReveal>
+      </section>
+
+      <ScrollReveal delay={180}>
+        <section className="bg-[var(--surface-muted)]/60">
+          <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-14">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+                FAQ
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg" />
+            </div>
+            <div className="mx-auto mt-10 max-w-4xl">
+              <FAQAccordion items={faqs} />
             </div>
           </div>
-          <DashboardOverviewCard />
-        </div>
-      </section>
-
-      <section className="bg-[var(--surface-muted)]/60">
-        <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-14">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
-              FAQ
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-
-            </p>
-          </div>
-          <div className="mx-auto mt-10 max-w-4xl">
-            <FAQAccordion items={faqs} />
-          </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       <SiteFooterCta
         formId={formId}
