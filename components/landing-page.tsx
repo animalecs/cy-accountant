@@ -39,36 +39,50 @@ const faqs = [
 
 function VideoPreviewCard() {
   return (
-    <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-5 sm:p-6">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,100,254,0.24),transparent_34%)]" />
-      <div className="relative flex h-full min-h-[18rem] flex-col justify-between rounded-[var(--radius-lg)] border border-white/10 bg-[#2d2340]/80 p-5 sm:min-h-[20rem]">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-sm font-medium text-white/68">Quick overview</p>
-            <p className="mt-1 text-xl font-semibold tracking-tight text-white">
-              See how Fiscalio keeps admin visible
-            </p>
-          </div>
-          <div className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/78">
-            1:42
+    <div className="flex justify-center">
+      <div className="relative w-full max-w-[20rem] overflow-hidden rounded-[2.5rem] border border-[#8f79ee] bg-[linear-gradient(180deg,#9a7fee_0%,#b09af1_60%,#f2f0fb_100%)] px-5 pb-8 pt-5 shadow-[0_18px_40px_rgba(18,12,34,0.28)] sm:max-w-[22rem]">
+        <div className="flex items-center justify-between text-white">
+          <span className="text-2xl font-semibold tracking-tight">9:41</span>
+          <div className="h-8 w-28 rounded-full bg-[#2f2748]" />
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">5G</span>
+            <span className="h-3 w-6 rounded-sm border border-white" />
           </div>
         </div>
 
-        <div className="flex items-center justify-center py-8">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--accent)] shadow-[0_12px_30px_rgba(95,103,247,0.35)]">
-            <div className="ml-1 h-0 w-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-white" />
-          </div>
+        <div className="mt-10 text-center text-white">
+          <p className="text-lg text-white/82">Tuesday 7 April</p>
+          <p className="mt-2 text-6xl font-semibold tracking-tight sm:text-7xl">
+            16:04
+          </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          {["Onboarding", "Invoicing", "Tax checks"].map((item) => (
-            <div
-              key={item}
-              className="rounded-[var(--radius-sm)] bg-white/8 px-3 py-3 text-sm font-medium text-white/82"
-            >
-              {item}
+        <div className="relative mt-10">
+          <div className="absolute inset-x-3 top-4 h-full rounded-[1.5rem] bg-[#6c58c7]/45 blur-[1px]" />
+          <div className="relative rounded-[1.5rem] bg-white p-4 shadow-[0_18px_30px_rgba(67,49,138,0.18)]">
+            <div className="grid grid-cols-[auto_1fr_auto] items-start gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2b243d] text-white">
+                <div className="space-y-1">
+                  <div className="h-1 w-5 rounded-full bg-white" />
+                  <div className="h-1 w-4 rounded-full bg-white" />
+                  <div className="h-1 w-3 rounded-full bg-white" />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-[#626875]">Fiscalio</p>
+                  <p className="text-sm text-[#7e8792]">Now</p>
+                </div>
+                <p className="mt-1 text-lg font-semibold leading-7 text-[var(--foreground)]">
+                  Company approved 🥳
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#646b77]">
+                  You can now start invoicing
+                </p>
+              </div>
+              <div className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
