@@ -165,7 +165,9 @@ export function PricesPage({ locale }: PricesPageProps) {
             </div>
           </div>
 
-          <DashboardPricingMockup />
+          <div className="hidden lg:block">
+            <DashboardPricingMockup />
+          </div>
         </div>
       </section>
 
@@ -195,7 +197,7 @@ export function PricesPage({ locale }: PricesPageProps) {
                     {item.description}
                   </p>
                 </div>
-                <div className="text-right text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+                <div className="text-right text-2xl font-semibold tracking-tight text-[var(--accent-strong)]">
                   {item.price}
                 </div>
               </div>

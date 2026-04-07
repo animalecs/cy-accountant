@@ -64,7 +64,7 @@ function AppDashboardMockup() {
               </div>
             </div>
 
-            <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4">
+            <div className="hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:block">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <p className="text-sm text-[var(--muted-foreground)]">Revenue trend</p>
@@ -114,7 +114,7 @@ function AppDashboardMockup() {
               </div>
             </div>
 
-            <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4">
+            <div className="hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:block">
               <p className="text-sm text-[var(--muted-foreground)]">Upcoming items</p>
               <div className="mt-4 grid gap-3">
                 <div className="flex items-center justify-between rounded-[var(--radius-sm)] bg-[var(--surface-muted)] px-3 py-3">
@@ -134,7 +134,7 @@ function AppDashboardMockup() {
               </div>
             </div>
 
-            <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4">
+            <div className="hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:block">
               <p className="text-sm text-[var(--muted-foreground)]">Tax forecast</p>
               <p className="mt-2 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
                 €8,930 expected this year

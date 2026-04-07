@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { FAQAccordion } from "@/components/faq-accordion";
 import { MobileStickyCta } from "@/components/mobile-sticky-cta";
 import { SiteFooterCta } from "@/components/site-footer-cta";
 import { SiteHeader } from "@/components/site-header";
@@ -8,82 +9,121 @@ const formId = "lead-form";
 
 const heroTags: string[] = [];
 
-function PlaceholderVisual({
-  label,
-  heightClassName = "min-h-[18rem]",
-  dark = false,
-}: {
-  label: string;
-  heightClassName?: string;
-  dark?: boolean;
-}) {
+const faqs = [
+  {
+    question: "How do I get started?",
+    answer:
+      "You leave your details, we contact you to schedule the first call, and we review your case. Based on your situation, we confirm the scope, pricing, and next steps.",
+  },
+  {
+    question: "Can you help if I do not have a company yet?",
+    answer:
+      "Yes. We guide you through the company formation process in Cyprus and collect the information needed to set everything up correctly from the start.",
+  },
+  {
+    question: "Can I use Fiscalio if I already have a company?",
+    answer:
+      "Yes. Existing companies can be onboarded into the platform so invoices, expenses, deadlines, and accounting activity are managed in one place.",
+  },
+  {
+    question: "WHat if I need help relocating from Europe to Cyprus?",
+    answer:
+      "We can help you with the documents needed and searching for an apartment.",
+  },
+  {
+    question: "Do I still work with a real accountant?",
+    answer:
+      "Yes. The platform is supported by real accountants. The accountant handles the work and supports you when needed.",
+  },
+];
+
+function VideoPreviewCard() {
   return (
-    <div
-      className={[
-        "relative overflow-hidden rounded-[var(--radius-lg)] border p-6",
-        heightClassName,
-        dark
-          ? "border-white/10 bg-white/5"
-          : "border-[var(--border)] bg-[var(--surface)]",
-      ].join(" ")}
-    >
-      <div
-        className={[
-          "absolute inset-0",
-          dark
-            ? "bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_36%)]"
-            : "bg-[radial-gradient(circle_at_top_left,rgba(95,103,247,0.12),transparent_32%)]",
-        ].join(" ")}
-      />
-      <div className="relative flex h-full flex-col justify-between">
-        <div className="flex gap-2">
-          <span
-            className={[
-              "h-2.5 w-2.5 rounded-full",
-              dark ? "bg-white/30" : "bg-[var(--border)]",
-            ].join(" ")}
-          />
-          <span
-            className={[
-              "h-2.5 w-2.5 rounded-full",
-              dark ? "bg-white/30" : "bg-[var(--border)]",
-            ].join(" ")}
-          />
-          <span
-            className={[
-              "h-2.5 w-2.5 rounded-full",
-              dark ? "bg-white/30" : "bg-[var(--border)]",
-            ].join(" ")}
-          />
-        </div>
-        <div
-          className={[
-            "grid gap-3",
-            dark ? "text-white/88" : "text-[var(--foreground)]",
-          ].join(" ")}
-        >
-          <div
-            className={[
-              "h-14 rounded-[var(--radius-md)]",
-              dark ? "bg-white/10" : "bg-[var(--surface-muted)]",
-            ].join(" ")}
-          />
-          <div className="grid grid-cols-2 gap-3">
-            <div
-              className={[
-                "h-24 rounded-[var(--radius-md)]",
-                dark ? "bg-white/10" : "bg-[var(--surface-muted)]",
-              ].join(" ")}
-            />
-            <div
-              className={[
-                "h-24 rounded-[var(--radius-md)]",
-                dark ? "bg-white/10" : "bg-[var(--surface-muted)]",
-              ].join(" ")}
-            />
+    <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-5 sm:p-6">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,100,254,0.24),transparent_34%)]" />
+      <div className="relative flex h-full min-h-[18rem] flex-col justify-between rounded-[var(--radius-lg)] border border-white/10 bg-[#2d2340]/80 p-5 sm:min-h-[20rem]">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-medium text-white/68">Quick overview</p>
+            <p className="mt-1 text-xl font-semibold tracking-tight text-white">
+              See how Fiscalio keeps admin visible
+            </p>
           </div>
-          <div className="text-sm font-medium uppercase tracking-[0.18em]">
-            {label}
+          <div className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/78">
+            1:42
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center py-8">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--accent)] shadow-[0_12px_30px_rgba(95,103,247,0.35)]">
+            <div className="ml-1 h-0 w-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-white" />
+          </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          {["Onboarding", "Invoicing", "Tax checks"].map((item) => (
+            <div
+              key={item}
+              className="rounded-[var(--radius-sm)] bg-white/8 px-3 py-3 text-sm font-medium text-white/82"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DashboardOverviewCard() {
+  return (
+    <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow-soft)] sm:p-5">
+      <div className="flex items-center justify-between gap-4 border-b border-[var(--border)] pb-4">
+        <div>
+          <p className="text-sm text-[var(--muted-foreground)]">Dashboard overview</p>
+          <p className="mt-1 text-lg font-semibold tracking-tight text-[var(--foreground)]">
+            One place for company admin
+          </p>
+        </div>
+        <div className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-medium text-[var(--accent-strong)]">
+          Portal
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-muted)] p-4">
+            <p className="text-sm text-[var(--muted-foreground)]">Invoices</p>
+            <p className="mt-2 text-3xl font-semibold tracking-tight text-[var(--foreground)]">
+              18
+            </p>
+            <p className="mt-2 text-sm text-[var(--muted-foreground)]">3 awaiting payment</p>
+          </div>
+          <div className="hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-muted)] p-4 sm:block">
+            <p className="text-sm text-[var(--muted-foreground)]">Expected taxes</p>
+            <p className="mt-2 text-3xl font-semibold tracking-tight text-[var(--foreground)]">
+              €4,260
+            </p>
+            <p className="mt-2 text-sm text-[var(--accent-strong)]">Next review in 10 days</p>
+          </div>
+        </div>
+
+        <div className="hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:block">
+          <p className="text-sm text-[var(--muted-foreground)]">Upcoming tasks</p>
+          <div className="mt-4 grid gap-3">
+            {[
+              ["Upload expense receipts", "Today"],
+              ["VAT check", "This week"],
+              ["Quarterly review", "Scheduled"],
+            ].map(([label, status]) => (
+              <div
+                key={label}
+                className="flex items-center justify-between rounded-[var(--radius-sm)] bg-[var(--surface-muted)] px-3 py-3 text-sm"
+              >
+                <span className="font-medium text-[var(--foreground)]">{label}</span>
+                <span className="text-[var(--muted-foreground)]">{status}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -105,7 +145,16 @@ export function LandingPage({ locale }: LandingPageProps) {
         <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-8 sm:py-12 md:py-16">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--muted-foreground)]">
-              Powered by GMAP Associates
+              Powered by{" "}
+              <a
+                href="https://www.gmapgroup.net/"
+                target="_blank"
+                rel="noreferrer"
+                className="relative inline-block px-1 font-semibold text-[var(--foreground)] transition hover:text-[var(--accent-strong)]"
+              >
+                <span className="absolute left-0 right-0 top-0 h-2 rounded-sm bg-[var(--accent-soft)]" />
+                <span className="relative">GMAP Associates</span>
+              </a>
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl">
               Managing a company in Cyprus has never been this simple.
@@ -115,13 +164,15 @@ export function LandingPage({ locale }: LandingPageProps) {
               workspace for invoicing, expenses, tax visibility, and accountant
               support.
             </p> */}
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={`#${formId}`}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
-              >
-                Book your first call
-              </a>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row " >
+              <div className=" text-white">
+                <a
+                  href={`#${formId}`}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
+                >
+                  Book your first call
+                </a>
+              </div>
               <a
                 href="/en/app"
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-medium text-[var(--foreground)]"
@@ -149,13 +200,13 @@ export function LandingPage({ locale }: LandingPageProps) {
             ))}
           </div>
 
-          <div className="mx-auto mt-6 max-w-5xl overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)]  shadow-[var(--shadow-soft)]">
+          <div className="mx-auto mt-6 max-w-[700px] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] shadow-[var(--shadow-soft)]">
             <Image
-              src="/hero-team.png"
-              alt="Three professionals representing different Cyprus business profiles"
-              width={1300}
-              height={680}
-              className="h-auto w-full"
+              src="/hero-happy-people.jpg"
+              alt="Professional working on a laptop in a bright office setting"
+              width={1000}
+              height={667}
+              className="h-auto max-w-[700px] w-full"
               priority
             />
           </div>
@@ -171,19 +222,13 @@ export function LandingPage({ locale }: LandingPageProps) {
               One portal instead of scattered admin
             </p>
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
-              Opening and managing a company in Cyprus should feel structured
+              Opening and managing a company in Cyprus has never been this easy
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-white/72">
-              Clear onboarding, clear pricing, clear documents, and clear tax
-              expectations. No Trustpilot block here. Just the product and the
-              service model.
+              We bring the relation between you and your accountant online and updated to 2026.
             </p>
           </div>
-          <PlaceholderVisual
-            label="Video placeholder"
-            heightClassName="min-h-[18rem] sm:min-h-[20rem]"
-            dark
-          />
+          <VideoPreviewCard />
         </div>
       </section>
 
@@ -194,23 +239,38 @@ export function LandingPage({ locale }: LandingPageProps) {
               Dashboard
             </p>
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
-              See how the app organizes your Cyprus company in one place
+              See how the dashboard helps you manage taxes and invoices
             </h2>
             <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
               The dashboard, invoice flows, tax forecast, and support experience
               now live on a separate product page.
             </p>
-            <a
-              href="/en/app"
-              className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
-            >
-              Open the app page
-            </a>
+            <div className="text-white">
+              <a
+                href="/en/app"
+                className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white"
+              >
+                Check the dashboard
+              </a>
+            </div>
           </div>
-          <PlaceholderVisual
-            label="Dashboard overview placeholder"
-            heightClassName="min-h-[19rem]"
-          />
+          <DashboardOverviewCard />
+        </div>
+      </section>
+
+      <section className="bg-[var(--surface-muted)]/60">
+        <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-14">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+              FAQ
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
+
+            </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-4xl">
+            <FAQAccordion items={faqs} />
+          </div>
         </div>
       </section>
 
