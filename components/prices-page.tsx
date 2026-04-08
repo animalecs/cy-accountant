@@ -16,14 +16,14 @@ const plans = [
     title: "Open a company",
     subtitle: "For founders starting a Cyprus company",
     prefix: "Starting from",
-    price: "€3,000 + VAT",
+    price: "€3,000",
     cta: "Book your first call",
   },
   {
     title: "Annual accounting",
     subtitle: "For companies below €85,000 turnover",
     prefix: "Starting from",
-    price: "€2,000 + VAT",
+    price: "€2,000",
     cta: "Book your first call",
   },
   {
@@ -130,7 +130,7 @@ export function PricesPage({ locale }: PricesPageProps) {
                       </div>
 
                       <div className="mt-10">
-                        <p className="text-lg text-[var(--muted-foreground)]">
+                        <p className="text-sm font-medium uppercase tracking-[0.12em] text-[var(--muted-foreground)]">
                           {plan.prefix}
                         </p>
                         <p className="mt-3 text-4xl font-semibold tracking-tight text-[var(--accent)]">
@@ -143,7 +143,7 @@ export function PricesPage({ locale }: PricesPageProps) {
                           href={`#${formId}`}
                           className="inline-flex min-h-12 w-full items-center justify-center rounded-[var(--radius-md)] bg-[var(--accent)] px-5 py-3 text-base font-semibold text-white"
                         >
-                          {plan.cta}
+                          <p className="text-white">{plan.cta}</p>
                         </a>
                       </div>
                     </div>

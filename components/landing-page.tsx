@@ -233,7 +233,7 @@ export function LandingPage({ locale }: LandingPageProps) {
                 One portal instead of scattered admin
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight sm:text-4xl">
-                Opening and managing a company in Cyprus has never been this easy
+                Everything you need to run your company from a single dashboard
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-white/72">
                 We bring the relation between you and your accountant online and updated to 2026.

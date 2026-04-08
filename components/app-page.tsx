@@ -23,7 +23,7 @@ const appFeatures = [
   },
   {
     eyebrow: "Live accountant support",
-    title: "Ask questions inside the workflow and get help from a real person.",
+    title: "Ask questions inside the workflow and get help from your accountant.",
     label: "Support chat placeholder",
   },
 ];
@@ -292,7 +292,7 @@ export function AppPage({ locale }: AppPageProps) {
           <div className="mx-auto max-w-6xl px-[var(--container-pad)] py-10 sm:py-14 md:py-18">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-                The dashboard for your Cyprus company
+                The control panel for your company
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/78">
                 A single workspace for invoices, expenses, tax visibility,
