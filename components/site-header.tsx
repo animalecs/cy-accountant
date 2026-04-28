@@ -18,6 +18,9 @@ export function SiteHeader({
   const activeClassName = inverted
     ? "bg-[var(--accent)] text-white"
     : "bg-[var(--accent-soft)] text-[var(--accent-strong)]";
+  const ctaClassName = inverted
+    ? "bg-white text-[var(--dark-surface)] hover:bg-white/90"
+    : "bg-[var(--accent)] text-white hover:bg-[var(--accent-strong)] hover:text-white";
 
   return (
     <header className={`sticky top-0 z-40 border-b backdrop-blur ${baseClassName}`}>
@@ -40,6 +43,22 @@ export function SiteHeader({
             className={`rounded-full px-3 py-1.5 transition ${currentPage === "prices" ? activeClassName : linkClassName}`}
           >
             Prices
+          </a>
+          <a
+            href={`#${formId}`}
+            className={`inline-flex min-h-10 items-center justify-center rounded-full px-4 py-2 text-sm font-medium  transition ${ctaClassName}`}
+          >
+            <span
+
+              className={`${currentPage === "app" ? "text-black" : "text-white"
+
+                }`}
+
+            >
+
+              Book a call
+
+            </span>
           </a>
         </nav>
       </div>

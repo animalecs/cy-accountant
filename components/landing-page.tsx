@@ -24,10 +24,10 @@ const faqs = [
   {
     question: "Can I use Fiscalio if I already have a company?",
     answer:
-      "Yes. Existing companies can be onboarded into the platform so invoices, expenses, deadlines, and accounting activity are managed in one place.",
+      "Yes. Existing companies can be onboarded into the platform so invoices, expenses, deadlines, and accounting and auditing activity are managed in one place.",
   },
   {
-    question: "WHat if I need help relocating from Europe to Cyprus?",
+    question: "What if I need help relocating from Europe to Cyprus?",
     answer:
       "We can help you with the documents needed and searching for an apartment.",
   },
@@ -163,7 +163,7 @@ export function LandingPage({ locale }: LandingPageProps) {
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--muted-foreground)]">
                 Powered by{" "}
                 <a
-                  href="https://www.gmapgroup.net/"
+                  href="https://www.gmapgroup.eu/"
                   target="_blank"
                   rel="noreferrer"
                   className="relative inline-block px-1 font-semibold text-[var(--foreground)] transition hover:text-[var(--accent-strong)]"
@@ -175,6 +175,10 @@ export function LandingPage({ locale }: LandingPageProps) {
               <h1 className="mx-auto mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl">
                 Managing a company in Cyprus has never been this simple.
               </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
+                Accounting, auditing, tax coordination, and company admin now
+                run through one clear process built for Cyprus companies.
+              </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row ">
                 <div className=" text-white">
                   <a
@@ -236,7 +240,8 @@ export function LandingPage({ locale }: LandingPageProps) {
                 Everything you need to run your company from a single dashboard
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-white/72">
-                We bring the relation between you and your accountant online and updated to 2026.
+                We bring the relationship with your accounting and auditing team
+                online and updated to 2026.
               </p>
             </div>
             <VideoPreviewCard />

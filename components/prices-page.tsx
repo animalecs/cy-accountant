@@ -20,7 +20,7 @@ const plans = [
     cta: "Book your first call",
   },
   {
-    title: "Annual accounting",
+    title: "Annual accounting and auditing",
     subtitle: "For companies below €85,000 turnover",
     prefix: "Starting from",
     price: "€2,000",
@@ -45,13 +45,13 @@ const details = [
   {
     title: "Companies below €85,000 turnover",
     description:
-      "Annual accounting support and dashboard access for smaller companies with a simpler operating volume.",
+      "Annual accounting, auditing and dashboard access for smaller companies with a simpler operating volume.",
     price: "Starting from €2,000 + VAT",
   },
   {
     title: "Companies above €85,000 turnover",
     description:
-      "Annual accounting support and dashboard access for companies with a higher volume of activity and reporting work.",
+      "Annual accounting, auditing and dashboard access for companies with a higher volume of activity and reporting work.",
     price: "Custom quote",
   },
 ];

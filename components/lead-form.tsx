@@ -227,8 +227,16 @@ export function LeadForm({
               isEmailOnlyCompact ? "text-[var(--foreground)]" : mutedClassName
             }`}
           >
-            I accept the privacy policy and consent to being contacted about my
-            request.
+            I accept the{" "}
+            <a
+              href="/privacy-policy-fiscalio.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              privacy policy
+            </a>{" "}
+            and consent to being contacted about my request.
           </span>
         </label>
       </div>

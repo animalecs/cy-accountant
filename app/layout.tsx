@@ -14,9 +14,9 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Cyprus Company Setup and Accounting",
+  title: "Cyprus Company Setup, Accounting and Auditing",
   description:
-    "Open or manage your Cyprus company with one portal for invoicing, expenses, tax visibility, and accountant support.",
+    "Open or manage your Cyprus company with one portal for invoicing, expenses, tax visibility, accounting, auditing, and accountant support.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
